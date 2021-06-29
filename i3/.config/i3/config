@@ -10,6 +10,7 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod1
+set $mod2 Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -205,3 +206,7 @@ for_window [class=".*"] border pixel 0
 smart_borders on
 
 border_radius 15
+
+bindsym Print exec ~/.config/rofi/applets/applets/screenshot.sh
+bindsym $mod2+l exec ~/.config/rofi/applets/menu/powermenu.sh
+bindsym $mod2+t exec ~/.config/rofi/applets/menu/time.sh
