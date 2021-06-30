@@ -210,3 +210,10 @@ border_radius 15
 bindsym Print exec ~/.config/rofi/applets/applets/screenshot.sh
 bindsym $mod2+l exec ~/.config/rofi/applets/menu/powermenu.sh
 bindsym $mod2+t exec ~/.config/rofi/applets/menu/time.sh
+
+# Switch workspace by mod1 + mod2 + arrow('h, l' or 'Left, Right')
+bindsym $mod+$mod2+h workspace prev_on_output
+bindsym $mod+$mod2+Left workspace prev_on_output
+
+bindsym $mod+$mod2+l workspace next_on_output
+bindsym $mod+$mod2+Right workspace next_on_output
