@@ -192,7 +192,7 @@ bindsym $mod+r mode "resize"
 exec --no-startup-id ibus-daemon -drxR
 exec --no-startup-id ~/.config/i3/monitor.sh
 exec --no-startup-id ~/.config/i3/wallpaper.sh
-exec --no-startup-id picom -b
+exec --no-startup-id picom -b --experiment-backends
 exec --no-startup-id conky -c ~/.config/i3/conky/ArchMedium
 exec --no-startup-id ~/.config/polybar/cuts/launch.sh
 
