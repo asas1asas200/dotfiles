@@ -18,7 +18,7 @@ DAY="$(date +"%d")"
 MONTH="$(date +"%m")"
 YEAR="$(date +"%Y")"
 
-options="$DAY\n$MONTH\n$YEAR"
+options="$YEAR\n$MONTH\n$DAY"
 
 ## Main
 chosen="$(echo -e "$options" | $rofi_command -p "   at $TIME on $DN in $MN" -dmenu -selected-row 1)"
