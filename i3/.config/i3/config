@@ -351,3 +351,5 @@ mode "$mode_gaps_left" {
         bindsym Escape mode "default"
 }
 
+# Open specific application in floating mode
+for_window [class="Viewnior"] floating enable
