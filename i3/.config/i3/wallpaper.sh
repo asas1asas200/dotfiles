@@ -4,6 +4,6 @@ interval=5m
 
 while true
 do
-	feh -z --bg-scale "$path"
+	feh -z --bg-fill "$path"
 	sleep $interval
 done
