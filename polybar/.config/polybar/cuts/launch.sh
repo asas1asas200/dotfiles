@@ -19,6 +19,14 @@ NW=$(ip route | grep '^default' | awk '{print $5}' | head -n1)
 DISPLAY2="$(xrandr -q | grep 'HDMI-*-0' | cut -d ' ' -f1)"
 [[ ! -z "$DISPLAY2" ]] && MONITOR="$DISPLAY2" polybar -q top -c "$DIR"/config.ini &
 [[ ! -z "$DISPLAY2" ]] && NW="$NW" MONITOR="$DISPLAY2" polybar -q bottom -c "$DIR"/config.ini &
-DISPLAY1="$(xrandr -q | grep 'eDP' | cut -d ' ' -f1)"
+#
+#DISPLAY1="$(xrandr -q | grep 'eDP' | cut -d ' ' -f1)"
+#[[ ! -z "$DISPLAY1" ]] && MONITOR="$DISPLAY1" polybar -q top -c "$DIR"/config.ini &
+#[[ ! -z "$DISPLAY1" ]] && NW="$NW" MONITOR="$DISPLAY1" polybar -q bottom -c "$DIR"/config.ini &
+#
+#DISPLAY1="$(xrandr -q | grep 'DP' | cut -d ' ' -f1)"
+#[[ ! -z "$DISPLAY1" ]] && MONITOR="$DISPLAY1" polybar -q top -c "$DIR"/config.ini &
+#[[ ! -z "$DISPLAY1" ]] && NW="$NW" MONITOR="$DISPLAY1" polybar -q bottom -c "$DIR"/config.ini &
+DISPLAY1="DP-0"
 [[ ! -z "$DISPLAY1" ]] && MONITOR="$DISPLAY1" polybar -q top -c "$DIR"/config.ini &
 [[ ! -z "$DISPLAY1" ]] && NW="$NW" MONITOR="$DISPLAY1" polybar -q bottom -c "$DIR"/config.ini &
