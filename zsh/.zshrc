@@ -121,10 +121,11 @@ bindkey '^R' history-incremental-search-backward
 
 
 # ----- promt -----
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init --path)"
-neofetch | lolcat
+#export PYENV_ROOT="$HOME/.pyenv"
+#export PATH="$PYENV_ROOT/bin:$PATH"
+#eval "$(pyenv init --path)"
+#neofetch | lolcat
+PF_INFO="ascii title os host kernel uptime wm memory" pfetch
 PS1="%F{cyan} %~ >%F{blue}> %F{reset}"
 
 # ----- plugins -----
