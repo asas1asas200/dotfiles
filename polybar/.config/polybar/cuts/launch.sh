@@ -14,19 +14,8 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 NW=$(ip route | grep '^default' | awk '{print $5}' | head -n1)
 
 # Launch the bar
-#polybar -q top -c "$DIR"/config.ini &
-#polybar -q bottom -c "$DIR"/config.ini &
-DISPLAY2="$(xrandr -q | grep 'HDMI-*-0' | cut -d ' ' -f1)"
-[[ ! -z "$DISPLAY2" ]] && MONITOR="$DISPLAY2" polybar -q top -c "$DIR"/config.ini &
-[[ ! -z "$DISPLAY2" ]] && NW="$NW" MONITOR="$DISPLAY2" polybar -q bottom -c "$DIR"/config.ini &
-#
-#DISPLAY1="$(xrandr -q | grep 'eDP' | cut -d ' ' -f1)"
-#[[ ! -z "$DISPLAY1" ]] && MONITOR="$DISPLAY1" polybar -q top -c "$DIR"/config.ini &
-#[[ ! -z "$DISPLAY1" ]] && NW="$NW" MONITOR="$DISPLAY1" polybar -q bottom -c "$DIR"/config.ini &
-#
-#DISPLAY1="$(xrandr -q | grep 'DP' | cut -d ' ' -f1)"
-#[[ ! -z "$DISPLAY1" ]] && MONITOR="$DISPLAY1" polybar -q top -c "$DIR"/config.ini &
-#[[ ! -z "$DISPLAY1" ]] && NW="$NW" MONITOR="$DISPLAY1" polybar -q bottom -c "$DIR"/config.ini &
-DISPLAY1="DP-0"
-[[ ! -z "$DISPLAY1" ]] && MONITOR="$DISPLAY1" polybar -q top -c "$DIR"/config.ini &
-[[ ! -z "$DISPLAY1" ]] && NW="$NW" MONITOR="$DISPLAY1" polybar -q bottom -c "$DIR"/config.ini &
+DIS=$(xrandr --listactivemonitors | grep 'DP\|HDMI' | rev | cut -d ' ' -f1 | rev)
+for mon in $DIS; do
+	MONITOR="$mon" polybar -q top -c "$DIR"/config.ini &
+	NW="$NW" MONITOR="$mon" polybar -q bottom -c "$DIR"/config.ini &
+done
