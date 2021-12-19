@@ -48,6 +48,6 @@ ${font Zekton:style=Bold:size=9}${goto 83}${fs_used /}${goto 175}${swapperc}%
 #${font Zekton:style=Bold:size=10}${goto 50}machine${goto 130}${machine}
 
 
-${image ~/.conky/victorConky/ArchMedium.png -p 10,0}
+${image ~/.config/i3/conky/ArchMedium.png -p 10,0}
 
 

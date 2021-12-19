@@ -193,19 +193,25 @@ exec --no-startup-id ibus-daemon -drxR
 exec --no-startup-id ~/.config/i3/monitor.sh
 exec --no-startup-id ~/.config/i3/wallpaper.sh
 exec --no-startup-id conky -c ~/.config/i3/conky/ArchMedium
+exec --no-startup-id /usr/bin/lxqt-policykit-agent
 exec_always --no-startup-id ~/.config/picom/launch.sh
 exec_always --no-startup-id ~/.config/polybar/cuts/launch.sh
 
 focus_follows_mouse no
 
 #smart_gaps on
-gaps inner 10
-gaps outer 10
+gaps inner 20
+gaps outer 5
 
 for_window [class=".*"] border pixel 1
+for_window [class=".*"] title_window_icon yes
+for_window [class=".*"] title_window_icon padding 10
+
 smart_borders on
 
-border_radius 15
+title_align center
+
+#border_radius 15
 
 bindsym Print exec ~/.config/rofi/applets/applets/screenshot.sh
 bindsym $mod2+l exec ~/.config/rofi/applets/menu/powermenu.sh

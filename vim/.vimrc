@@ -4,6 +4,7 @@ syntax on
 set tabstop=4
 set noexpandtab
 set incsearch
+set encoding=utf8
 colo desert
 
 set laststatus=2
