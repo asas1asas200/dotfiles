@@ -4,6 +4,7 @@ COLOR_SCHEME=dark # dark/light
 
 
 
+export _JAVA_AWT_WM_NONREPARENTING=1
 PATH=$PATH:~/.local/bin
 # --------------------------------- ALIASES -----------------------------------
 # color
@@ -21,6 +22,7 @@ alias scss='scss --no-cache --quiet --sourcemap=none'
 alias xclip='xclip -selection c'
 # replace commands
 command -v vim > /dev/null && alias vi='vim'
+command -v nvim > /dev/null && alias vim='nvim'
   # ls & tree
 alias ll='ls -l'
 alias la='ls -A'
@@ -125,7 +127,8 @@ bindkey '^R' history-incremental-search-backward
 #export PATH="$PYENV_ROOT/bin:$PATH"
 #eval "$(pyenv init --path)"
 #neofetch | lolcat
-PF_INFO="ascii title os host kernel uptime wm memory" pfetch
+#PF_INFO="ascii title os host kernel uptime wm memory" pfetch
+uwufetch
 PS1="%F{cyan} %~ >%F{blue}> %F{reset}"
 
 # ----- plugins -----
