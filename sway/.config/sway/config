@@ -15,12 +15,13 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term alacritty
+set $term kitty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 #set $menu dmenu_path | dmenu | xargs swaymsg exec --
 #bindsym $mod+d exec --no-startup-id ~/.config/rofi/bin/launcher_misc
+font pango:Comic Mono 12
 
 ### Output configuration
 #
@@ -76,6 +77,10 @@ input "1739:52781:MSFT0003:00_06CB:CE2D_Touchpad" {
 	scroll_method two_finger
 	#scroll_factor 0.5
 	tap_button_map lrm
+}
+
+input "9610:54:Glorious_Model_O" {
+	accel_profile flat
 }
 
 ### Key bindings
@@ -272,6 +277,7 @@ bindsym $mod+$mod2+Left workspace prev_on_output
 
 bindsym $mod+$mod2+l workspace next_on_output
 bindsym $mod+$mod2+Right workspace next_on_output
+bindsym $mod+Shift+n exec swaync-client -t -sw
 
 # Color
 
@@ -436,7 +442,7 @@ exec_always {
 exec_always --no-startup-id nm-applet --indicator
 #exec_always --no-startup-id ibus-daemon -drxR
 exec_always --no-startup-id mictray
-exec_always --no-startup-id mako --default-timeout 5000
+exec_always --no-startup-id swaync
 exec --no-startup-id ~/.config/sway/wallpaper.sh
 exec_always --no-startup-id fcitx5 -dr
 exec --no-startup-id python /usr/share/sway/scripts/inactive-windows-transparency.py
