@@ -26,7 +26,8 @@ def on_window_focus(inactive_opacity, ipc, event):
     if focused.id != prev_focused.id:  # https://github.com/swaywm/sway/issues/2859
         focused.command("opacity 1")
         if workspace == prev_workspace:
-            prev_focused.command("opacity " + inactive_opacity)
+            if not prev_focused.sticky:
+                prev_focused.command("opacity " + inactive_opacity)
         prev_focused = focused
         prev_workspace = workspace
 
