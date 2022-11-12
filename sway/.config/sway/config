@@ -92,6 +92,7 @@ input "1133:49284:Logitech_G102_Prodigy_Gaming_Mouse" {
 #
 # Basics:
 #
+	bindsym $mod+Shift+f sticky toggle
     # Start a terminal
     bindsym $mod+Return exec $term
 
