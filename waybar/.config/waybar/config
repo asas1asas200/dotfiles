@@ -30,8 +30,10 @@
         "format-icons": {
             //"locked": "",
             //"unlocked": ""
-			"locked": "⬤",
-			"unlocked": "◯"
+			//"locked": "⬤",
+			//"unlocked": "◯"
+			"locked": "🅐",
+			"unlocked": "ⓐ"
         }
     },
     "sway/mode": {
