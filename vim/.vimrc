@@ -7,6 +7,8 @@ set incsearch
 set nohlsearch
 set shiftwidth=4
 colo desert
+hi Normal guibg=NONE ctermbg=NONE
+hi EndofBuffer guibg=NONE ctermbg=NONE
 
 set laststatus=2
 set noshowmode
